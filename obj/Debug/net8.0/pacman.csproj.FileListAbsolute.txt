@@ -1,0 +1,14 @@
+/home/l-guerra-rago/RiderProjects/pacman/bin/Debug/net8.0/pacman
+/home/l-guerra-rago/RiderProjects/pacman/bin/Debug/net8.0/pacman.deps.json
+/home/l-guerra-rago/RiderProjects/pacman/bin/Debug/net8.0/pacman.runtimeconfig.json
+/home/l-guerra-rago/RiderProjects/pacman/bin/Debug/net8.0/pacman.dll
+/home/l-guerra-rago/RiderProjects/pacman/bin/Debug/net8.0/pacman.pdb
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.GeneratedMSBuildEditorConfig.editorconfig
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.AssemblyInfoInputs.cache
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.AssemblyInfo.cs
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.csproj.CoreCompileInputs.cache
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.dll
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/refint/pacman.dll
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.pdb
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.genruntimeconfig.cache
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/ref/pacman.dll

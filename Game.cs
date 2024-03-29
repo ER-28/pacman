@@ -7,9 +7,10 @@ namespace Pacman;
 public class Game
 {
     public static bool Running { get; set; } = true;
-    public static bool Updated { get; set; } = true;
-    public static Map Map { get; set; } = new Map();
-    public static Player Player { get; set; } = new Player();
+    public static Map Map { get; set; } = new ();
+    public static Player Player { get; set; } = new ();
+    public static int Score { get; set; } = 0;
+    public static bool Updated { get; set; } = false;
     
     public Game()
     {
@@ -29,11 +30,20 @@ public class Game
             HandleInput();
             
             Player.Move();
+            Map.CheckCollision();
+            Map.CheckWin();
+
+            if (Updated)
+            {
+                Console.Clear();
+                Updated = false;
+            }
             
             Map.Draw();
+            Map.DrawObject();
             Player.Draw();
             
-            Thread.Sleep(300);
+            Thread.Sleep(500);
         }
         Console.Clear();
     }
@@ -49,16 +59,16 @@ public class Game
         switch (key)
         {
             case ConsoleKey.UpArrow:
-                Player.PlayerDirection = Direction.Up;
+                Player.WantedDirection = Direction.Up;
                 break;
             case ConsoleKey.DownArrow:
-                Player.PlayerDirection = Direction.Down;
+                Player.WantedDirection = Direction.Down;
                 break;
             case ConsoleKey.LeftArrow:
-                Player.PlayerDirection = Direction.Left;
+                Player.WantedDirection = Direction.Left;
                 break;
             case ConsoleKey.RightArrow:
-                Player.PlayerDirection = Direction.Right;
+                Player.WantedDirection = Direction.Right;
                 break;
             case ConsoleKey.Q:
                 break;

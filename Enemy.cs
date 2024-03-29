@@ -66,6 +66,7 @@ public class Enemy
                 Game.Score += 100;
                 Position = SpawnPosition;
                 IsAfraid = false;
+                return;
             }
             Game.Player.Respawn();
         }

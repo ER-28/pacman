@@ -2,7 +2,7 @@ namespace Pacman.utils;
 
 public static class MapText
 {
-    public static string getMapText()
+    public static string GetMapText()
     {
         return @"
 ╔═══════════════════╦═══════════════════╗

@@ -14,7 +14,7 @@ namespace Pacman
 
         private void InitMap()
         {
-            var map_lines = MapText.getMapText().Split('\n');
+            var map_lines = MapText.GetMapText().Split('\n');
             foreach (var line in map_lines)
             {
                 var map_line = new List<string>();

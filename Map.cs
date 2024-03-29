@@ -113,8 +113,6 @@ namespace Pacman
             if (Points.All(point => point.IsEaten) && PacGommes.All(pacGomme => pacGomme.IsEaten) && Cherries.All(cherry => cherry.IsEaten))
             {
                 Console.Clear();
-                Console.WriteLine("You win!");
-                Console.WriteLine($"Score: {Game.Score}");
                 Game.Running = false;
             }
         }

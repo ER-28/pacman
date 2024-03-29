@@ -7,7 +7,8 @@ public class Player
     public Position Position { get; set; }
     public int PlayerDirection { get; set; }
     public int WantedDirection { get; set; }
-    
+    public static int Life { get; set; } = 3;
+
     public Player()
     {
         Position = new Position(20, 18);

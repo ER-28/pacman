@@ -60,7 +60,7 @@ namespace Pacman
     
         public void Draw()
         {
-            Console.WriteLine($"Score: {Game.Score}");
+            ColorWrite.Parser($"#yellow#Score: {Game.Score}    -     #red#Lives: {Player.Life}    -     #red#Cherries: {Cherries.Count(x => x.IsEaten)}/{Cherries.Count}    -     #green#PacGommes: {PacGommes.Count(x => x.IsEaten)}/{PacGommes.Count}    -     #blue#Points: {Points.Count(x => x.IsEaten)}/{Points.Count}\n");
             for (var i = 0; i < MapData.Count; i++)
             {
                 for (var j = 0; j < MapData[i].Count; j++)

@@ -21,28 +21,28 @@ public class Player
         switch (PlayerDirection)
         {
             case Direction.Up:
-                if (Map.walkable.Contains(Game.Map.MapData[Position.Y - 1][Position.X]))
+                if (Map.Walkable.Contains(Game.Map.MapData[Position.Y - 1][Position.X]))
                 {
                     Game.Updated = true;
                     Position.Y--;
                 }
                 break;
             case Direction.Down:
-                if (Map.walkable.Contains(Game.Map.MapData[Position.Y + 1][Position.X]))
+                if (Map.Walkable.Contains(Game.Map.MapData[Position.Y + 1][Position.X]))
                 {
                     Game.Updated = true;
                     Position.Y++;
                 }
                 break;
             case Direction.Left:
-                if (Map.walkable.Contains(Game.Map.MapData[Position.Y][Position.X - 2]))
+                if (Map.Walkable.Contains(Game.Map.MapData[Position.Y][Position.X - 2]))
                 {
                     Game.Updated = true;
                     Position.X -= 2;
                 }
                 break;
             case Direction.Right:
-                if (Map.walkable.Contains(Game.Map.MapData[Position.Y][Position.X + 2]))
+                if (Map.Walkable.Contains(Game.Map.MapData[Position.Y][Position.X + 2]))
                 {
                     Game.Updated = true;
                     Position.X += 2;
@@ -87,13 +87,13 @@ public class Player
         switch (direction)
         {
             case Direction.Up:
-                return Map.walkable.Contains(Game.Map.MapData[Position.Y - 1][Position.X]);
+                return Map.Walkable.Contains(Game.Map.MapData[Position.Y - 1][Position.X]);
             case Direction.Down:
-                return Map.walkable.Contains(Game.Map.MapData[Position.Y + 1][Position.X]);
+                return Map.Walkable.Contains(Game.Map.MapData[Position.Y + 1][Position.X]);
             case Direction.Left:
-                return Map.walkable.Contains(Game.Map.MapData[Position.Y][Position.X - 2]);
+                return Map.Walkable.Contains(Game.Map.MapData[Position.Y][Position.X - 2]);
             case Direction.Right:
-                return Map.walkable.Contains(Game.Map.MapData[Position.Y][Position.X + 2]);
+                return Map.Walkable.Contains(Game.Map.MapData[Position.Y][Position.X + 2]);
         }
         return false;
     }

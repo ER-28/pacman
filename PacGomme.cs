@@ -20,7 +20,7 @@ public class PacGomme
         {
             if (IsEaten) return;
             IsEaten = true;
-            // Game.Score += 10;
+            Game.Enemies.ForEach(enemy => enemy.isAfraid = true);
         }
     }
 

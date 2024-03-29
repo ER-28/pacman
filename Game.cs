@@ -7,8 +7,9 @@ namespace Pacman;
 public class Game
 {
     public static bool Running { get; set; } = true;
-    public static Map Map { get; set; } = new ();
+    public static List<Enemy> Enemies { get; set; } = [];
     public static Player Player { get; set; } = new ();
+    public static Map Map { get; set; } = new ();
     public static int Score { get; set; } = 0;
     public static bool Updated { get; set; } = false;
     
@@ -30,18 +31,21 @@ public class Game
             HandleInput();
             
             Player.Move();
+            foreach (var enemy in Enemies) enemy.Move();
             Map.CheckCollision();
             Map.CheckWin();
 
             if (Updated)
             {
                 Console.Clear();
+            
+                Map.Draw();
+                Map.DrawObject();
+                Player.Draw();
+                foreach (var enemy in Enemies) enemy.Draw();
+                
                 Updated = false;
             }
-            
-            Map.Draw();
-            Map.DrawObject();
-            Player.Draw();
             
             Thread.Sleep(500);
         }

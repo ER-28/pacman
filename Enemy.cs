@@ -5,6 +5,7 @@ namespace Pacman;
 public class Enemy
 {
     public Position Position { get; set; }
+    public Position SpawnPosition { get; set; }
     public int EnemyDirection { get; set; }
     public int EnemyWantDirection { get; set; }
     public int EnemyIndex { get; set; }
@@ -14,6 +15,7 @@ public class Enemy
     public Enemy(Position position, int index)
     {
         Position = position;
+        SpawnPosition = new Position(position.X, position.Y);
         EnemyDirection = 0;
         EnemyIndex = index;
     }
@@ -53,6 +55,20 @@ public class Enemy
         };
         Console.Write('M');
         Console.ResetColor();
+    }
+    
+    public void CheckCollision()
+    {
+        if (Position.X == Game.Player.Position.X && Position.Y == Game.Player.Position.Y)
+        {
+            if (IsAfraid)
+            {
+                Game.Score += 100;
+                Position = SpawnPosition;
+                IsAfraid = false;
+            }
+            Game.Player.Respawn();
+        }
     }
 
     public void Move()

@@ -105,4 +105,11 @@ public class Player
         Console.Write('\u2588');
         Console.ResetColor();
     }
+
+    public void Respawn()
+    {
+        Life--;
+        Position = new Position(20, 17);
+        PlayerDirection = Direction.Right;
+    }
 }

@@ -31,7 +31,11 @@ public class Game
             HandleInput();
             
             Player.Move();
-            foreach (var enemy in Enemies) enemy.Move();
+            foreach (var enemy in Enemies)
+            {
+                enemy.Move();
+                enemy.CheckCollision();
+            };
             Map.CheckCollision();
             Map.CheckWin();
 
@@ -47,7 +51,7 @@ public class Game
                 Updated = false;
             }
             
-            Thread.Sleep(500);
+            Thread.Sleep(200);
         }
         Console.Clear();
     }

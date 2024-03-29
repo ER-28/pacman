@@ -20,7 +20,11 @@ public class PacGomme
         {
             if (IsEaten) return;
             IsEaten = true;
-            Game.Enemies.ForEach(enemy => enemy.isAfraid = true);
+            foreach (var enemy in Game.Enemies)
+            {
+                enemy.IsAfraid = true;
+                enemy.AfraidTime = 50;
+            }
         }
     }
 

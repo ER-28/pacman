@@ -12,7 +12,7 @@ public class Game
     public static Map Map { get; set; } = new ();
     public static int Score { get; set; } = 0;
     public static bool Updated { get; set; } = false;
-    
+
     public Game()
     {
         Console.Clear();

@@ -8,8 +8,8 @@ public class Enemy
     public int EnemyDirection { get; set; }
     public int EnemyWantDirection { get; set; }
     public int EnemyIndex { get; set; }
-    public bool isAfraid { get; set; }
-    public bool hasAffraidSkin { get; set; }
+    public bool IsAfraid { get; set; }
+    public int AfraidTime { get; set; }
     
     public Enemy(Position position, int index)
     {
@@ -18,17 +18,31 @@ public class Enemy
         EnemyIndex = index;
     }
     
+    public void CheckAfraidTime()
+    {
+        if (!IsAfraid) return;
+        
+        if (AfraidTime <= 0)
+        {
+            IsAfraid = false;
+        }
+        
+        AfraidTime--;
+    }
+    
     public void Draw()
     {
         Console.SetCursorPosition(Position.X, Position.Y + 1);
-        hasAffraidSkin = !hasAffraidSkin;
-        if (isAfraid && hasAffraidSkin)
+        
+        CheckAfraidTime();
+        if (IsAfraid)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write('M');
             Console.ResetColor();
             return;
         }
+        
         Console.ForegroundColor = EnemyIndex switch
         {
             0 => ConsoleColor.Magenta,

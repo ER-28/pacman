@@ -4,8 +4,8 @@ namespace Pacman;
 
 public class Map
 {
-    public List<List<char>> MapData { get; set; }
-    public static List<char> walkable = new() { ' ', '·', '+' };
+    public List<List<string>> MapData { get; set; }
+    public static List<string> walkable = new() { " ", "·", "+" };
     public static int Width = 0;
     public static int Height = 0;
 
@@ -38,10 +38,16 @@ public class Map
         var map_lines = map_text.Split('\n');
         foreach (var line in map_lines)
         {
-            var map_line = new List<char>();
+            var map_line = new List<string>();
             foreach (var c in line)
             {
-                map_line.Add(c);
+                if (!walkable.Contains(c.ToString()))
+                {
+                    var temp = "#darkblue#" + c + "#white#";
+                    map_line.Add(temp);
+                    continue;
+                }
+                map_line.Add(c.ToString());
             }
             MapData.Add(map_line);
         }
@@ -51,7 +57,7 @@ public class Map
 
     public Map()
     {
-        MapData = new List<List<char>>();
+        MapData = new List<List<string>>();
         InitMap();
     }
     
@@ -62,7 +68,7 @@ public class Map
         {
             for (var j = 0; j < MapData[i].Count; j++)
             {
-                Console.Write(MapData[i][j]);
+                ColorWrite.Parser(MapData[i][j]);
             }
             Console.WriteLine();
         }

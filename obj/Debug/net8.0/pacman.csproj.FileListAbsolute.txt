@@ -12,3 +12,4 @@
 /home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.pdb
 /home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.genruntimeconfig.cache
 /home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/ref/pacman.dll
+/home/l-guerra-rago/RiderProjects/pacman/obj/Debug/net8.0/pacman.sourcelink.json
